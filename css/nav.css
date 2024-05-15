@@ -1,0 +1,279 @@
+:root {
+  --gap: 2rem;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.et-hero-tabs,
+.et-slide {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh;  */
+  /* position: relative; */
+  background: #272c33;
+  text-align: center;
+  padding: 0 2em;
+}
+
+.et-hero-tabs h1,
+.et-slide h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 1rem;
+}
+
+.et-hero-tabs h3,
+.et-slide h3 {
+  font-size: 1rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.6;
+}
+
+.et-hero-tabs-container {
+  display: flex;
+  flex-direction: row;
+  /* position: absolute;
+  bottom: -40; */
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #272c33;
+  z-index: 10;
+}
+
+.et-hero-tabs-container--top {
+  position: fixed;
+  top: 0;
+}
+
+.et-wrapper {
+  position: relative;
+  overflow: hidden;
+  /* padding: calc(var(--gap) / 2); */
+}
+
+.et-hero-tab {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  display: grid;
+  place-content: center;
+}
+
+.et-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #ffffff;
+  letter-spacing: 0.1rem;
+  transition: all 0.5s ease;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.et-wrapper::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  scale: var(--width, 0) 1;
+  transition: scale 300ms var(--scale-delay, 0ms),
+    translate 500ms var(--translate-delay, 0ms);
+  background: #ffffff;
+  bottom: 0;
+  left: 0;
+  translate: var(--translate, 0)
+}
+
+.et-wrapper:hover {
+  color: white;
+  background: #5e3c58;
+  --width: 1;
+}
+
+.active {
+  --width: 1;
+  background: #5e3c58;
+
+}
+
+@supports selector(:has(h1)) {
+  .et-wrapper:hover+.et-wrapper {
+    --translate: -100%;
+    --scale-delay: 300ms;
+    --translate-delay: 200ms;
+  }
+
+  .et-wrapper:has(+ :hover) {
+    --translate: 100%;
+    --scale-delay: 300ms;
+    --translate-delay: 200ms;
+  }
+}
+
+
+
+.et-wrapper-slider {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background: #000;
+  transition: left 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.navigation-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 30px; */
+  background-color: rgb(255, 255, 255);
+  padding: 5px 5px;
+  border-radius: 50px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgb(252, 252, 252);
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background-color: #bfb5b2;
+}
+
+
+@media (min-width: 800px) {
+
+  .et-hero-tabs h1,
+  .et-slide h1 {
+    font-size: 3rem;
+  }
+
+  .et-hero-tabs h3,
+  .et-slide h3 {
+    font-size: 1rem;
+  }
+
+  .et-hero-tab {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ------------------------SEARCH START--------------------- */
+
+
+
+.mySearchField {
+  width: 0;
+  transition: all;
+  visibility: hidden;
+  margin: 0 0 0 0;
+
+}
+
+
+
+/* --------------------....-SEARCH END--------------------- */
+
+
+/* ------------------SHOPPING BASKET START--------------------- */
+
+
+
+.myBasket {
+  position: fixed;
+  padding: 15px;
+  z-index: 50;
+  top: 136px;
+  right: 0;
+  height: 80%;
+  width: 300px;
+  background-color: #272c33f3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: -2px 0px 5px #272c33;
+  transition: all;
+  transform: translate(305px, 0);
+  overflow: auto;
+
+}
+.myBasketContent {
+  color: white;
+  
+}
+
+.myBasket * {
+  width: 100%;
+}
+
+.myBasket h5 {
+
+  text-align: center;
+  padding: 22px;
+  background-color: #E3e2dd;
+}
+
+.myBtnCart {
+  margin: 0 !important;
+}
+
+/* ------------------SHOPING BASKET END----------------------- */
+
+/* ------------------STICKY NAVBAR----------------------- */
+
+
+/* .nav-container.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #E3e2dd;
+} */
+
+.et-hero-tabs {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  z-index: 10;
+  
+  }
+
+
+/* ------------------STICKY NAVBAR----------------------- */

@@ -1,0 +1,43 @@
+.conCus{
+    vertical-align: middle;
+    display: flex;
+    font-weight: bold;
+}
+.card{
+    margin: auto;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+}
+
+.summary{
+    background-color: #bfb5b2 !important;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+h5{
+    margin-top: 2vh;
+}
+
+.btn{
+    margin-top: 4vh;
+}
+
+a{
+    color: #bfb5b2; 
+    padding: 0 1vh;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.test{
+    width: 90% !important;
+    margin: 0 auto;
+
+}
